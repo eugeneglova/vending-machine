@@ -37,6 +37,14 @@ const Sidebar = (
 					<button className="btn btn-success btn-lg" disabled="disabled">Buy</button>
 				</div>
 			</div>
+			<div className="panel panel-default">
+				<div className="panel-heading">
+					Change
+				</div>
+				<div className="panel-body">
+					$0
+				</div>
+			</div>
 		</section>
 	)
 );
