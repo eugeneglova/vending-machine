@@ -1,0 +1,24 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "description": "Vending Machine using React/Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugeneglova/vending-machine.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "vendingmachine"
+  ],
+  "author": "Eugene Glova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugeneglova/vending-machine/issues"
+  },
+  "homepage": "https://github.com/eugeneglova/vending-machine#readme"
+}
