@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
 	entry: './static/js/src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'static/js/built'),
-		filename: 'bundle.js'
+		path: path.resolve(__dirname, 'static'),
+		filename: 'js/built/bundle.js'
 	},
 	module: {
 		rules: [
@@ -26,7 +26,6 @@ module.exports = {
 		]
 	},
 	devServer: {
-		contentBase: path.join(__dirname, 'static'),
-		publicPath: '/js/built'
+		contentBase: path.join(__dirname, 'static')
 	}
 };
