@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-	entry: './static/js/src/index.js',
+	entry: [
+		'bootstrap-loader',
+		'./static/js/src/index.js'
+	],
 	output: {
 		path: path.resolve(__dirname, 'static'),
 		filename: 'js/built/bundle.js'
@@ -22,7 +25,9 @@ module.exports = {
 						}
 					}
 				]
-			}
+			},
+			{ test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
+			{ test: /\.(ttf|eot)$/, loader: 'file-loader' }
 		]
 	},
 	devServer: {
