@@ -6,6 +6,25 @@ module.exports = {
 		path: path.resolve(__dirname, 'static/js/built'),
 		filename: 'bundle.js'
 	},
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				use: [
+					{
+						loader: 'babel-loader',
+						query: {
+							presets: [
+								'es2015',
+								'stage-2',
+								'react'
+							]
+						}
+					}
+				]
+			}
+		]
+	},
 	devServer: {
 		contentBase: path.join(__dirname, 'static'),
 		publicPath: '/js/built'
