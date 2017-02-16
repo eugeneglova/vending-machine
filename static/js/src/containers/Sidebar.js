@@ -7,7 +7,7 @@ const Sidebar = (
 				<div className="panel-heading">
 					Ballance
 				</div>
-				<div className="panel-body">
+				<div className="panel-body text-center">
 					$10
 				</div>
 			</div>
@@ -17,15 +17,15 @@ const Sidebar = (
 				</div>
 				<div className="panel-body">
 					<section className="row center-block">
-						{[1,2,5].map(banknote => (
-							<div key={banknote} className="col-xs-12 col-md-4" style={{ marginBottom: '.5em' }}>
+						{[1,2,5,10].map(banknote => (
+							<div key={banknote} className="col-md-6 text-center" style={{ marginBottom: '.5em' }}>
 								<button className="btn btn-primary">${banknote}</button>
 							</div>
 						))}
 					</section>
 					<section className="row center-block">
-						{[10,20,50].map(banknote => (
-							<div key={banknote} className="col-xs-12 col-md-4" style={{ marginBottom: '.5em' }}>
+						{[20,50].map(banknote => (
+							<div key={banknote} className="col-md-6  text-center" style={{ marginBottom: '.5em' }}>
 								<button className="btn btn-primary">${banknote}</button>
 							</div>
 						))}
@@ -41,7 +41,7 @@ const Sidebar = (
 				<div className="panel-heading">
 					Change
 				</div>
-				<div className="panel-body">
+				<div className="panel-body text-center">
 					$0
 				</div>
 			</div>
