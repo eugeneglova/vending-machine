@@ -7,14 +7,6 @@ const Sidebar = (
 		<section className="sidebar">
 			<BallancePanel />
 			<BanknotePanel banknotes={[1,2,5,10,20,50]} />
-			<div className="panel panel-default">
-				<div className="panel-heading">
-					Change
-				</div>
-				<div className="panel-body text-center">
-					$0
-				</div>
-			</div>
 		</section>
 	)
 );
