@@ -1,6 +1,7 @@
 import {
 	FETCH_PRODUCTS,
-	FETCH_PRODUCTS_DONE
+	FETCH_PRODUCTS_DONE,
+	LOAD_BANKNOTE
 } from '../constants/ActionTypes';
 import axios from 'axios';
 
@@ -15,4 +16,11 @@ export const fetchProducts = () => dispatch => {
 			payload: products
 		});
 	});
+};
+
+export const loadBanknote = banknote => dispatch => {
+	dispatch({
+		type: LOAD_BANKNOTE,
+		payload: banknote
+	});	
 };
