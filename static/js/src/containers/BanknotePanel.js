@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { loadBanknote } from '../actions';
+import { incrementBallance } from '../actions';
 
 const BanknotePanel = (
 	({ banknotes, onBanknoteClick }) => (
@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onBanknoteClick: banknote =>  dispatch(loadBanknote(banknote))
+	onBanknoteClick: amount =>  dispatch(incrementBallance(amount))
 });
 
 export default connect(

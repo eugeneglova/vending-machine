@@ -1,7 +1,8 @@
 import {
 	FETCH_PRODUCTS,
 	FETCH_PRODUCTS_DONE,
-	LOAD_BANKNOTE,
+	INCREMENT_BALLANCE,
+	DECREMENT_BALLANCE,
 	BUY_PRODUCT
 } from '../constants/ActionTypes';
 import axios from 'axios';
@@ -19,14 +20,22 @@ export const fetchProducts = () => dispatch => {
 	});
 };
 
-export const loadBanknote = banknote => dispatch => {
+export const incrementBallance = amount => dispatch => {
 	dispatch({
-		type: LOAD_BANKNOTE,
-		payload: banknote
+		type: INCREMENT_BALLANCE,
+		payload: amount
 	});	
 };
 
-export const buyProduct = id => dispatch => {
+export const decrementBallance = amount => dispatch => {
+	dispatch({
+		type: DECREMENT_BALLANCE,
+		payload: amount
+	});	
+};
+
+export const buyProduct = id => (dispatch, getState) => {
+	dispatch(decrementBallance(getState().products.data[id].price));
 	dispatch({
 		type: BUY_PRODUCT,
 		payload: id
