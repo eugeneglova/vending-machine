@@ -40,7 +40,7 @@ I've checked sevral image about vending machines to get features they provide an
 
 All of them have different kind of products and all accept money.
 
-I decided to use just US dollar banknotes 1, 2, 5, 10, 20, 50 and 100 and set prices as int numbers.
+I decided to use just US dollar banknotes 1, 2, 5, 10, 20 and 50 and set prices as int numbers.
 
 Also I've added number of products so the product could be out of stock.
 
