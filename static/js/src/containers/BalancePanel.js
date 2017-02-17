@@ -1,25 +1,25 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-const BallancePanel = (
-	({ ballance }) => (
+const BalancePanel = (
+	({ balance }) => (
 		<section className="panel panel-default">
 			<div className="panel-heading">
-				Ballance
+				Balance
 			</div>
 			<div className="panel-body text-center">
-				${ballance}
+				${balance}
 			</div>
 		</section>
 	)
 );
 
-BallancePanel.propTypes = {
-	ballance: PropTypes.number.isRequired
+BalancePanel.propTypes = {
+	balance: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({
-	ballance: state.ballance
+	balance: state.balance
 });
 
 const mapDispatchToProps = () => ({
@@ -28,4 +28,4 @@ const mapDispatchToProps = () => ({
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(BallancePanel);
+)(BalancePanel);

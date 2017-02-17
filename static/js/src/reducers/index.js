@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import products from './products';
-import ballance from './ballance';
+import balance from './balance';
 import purchasedProducts from './purchasedProducts';
 
 const rootReducer = combineReducers({
 	products,
-	ballance,
+	balance,
 	purchasedProducts
 });
 

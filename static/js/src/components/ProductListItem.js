@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const ProductListItem = (
-	({ product, ballance, onClick }) => (
+	({ product, balance, onClick }) => (
 		<div className="panel panel-default">
 			<div className="panel-heading">
 				Price: ${product.price}
@@ -10,10 +10,10 @@ const ProductListItem = (
 				<img src={product.image} className="img-rounded" />
 			</div>
 			<div className="panel-footer">
-				{product.price <= ballance ?
+				{product.price <= balance ?
 					<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button>
 					:
-					<button className="btn btn-default disabled">Load ${product.price - ballance} more</button>
+					<button className="btn btn-default disabled">Load ${product.price - balance} more</button>
 				}
 			</div>
 		</div>
@@ -26,7 +26,7 @@ ProductListItem.propTypes = {
 		price: PropTypes.number.isRequired,
 		image: PropTypes.string.isRequired
 	}).isRequired,
-	ballance: PropTypes.number.isRequired,
+	balance: PropTypes.number.isRequired,
 	onClick: PropTypes.func.isRequired
 };
 
