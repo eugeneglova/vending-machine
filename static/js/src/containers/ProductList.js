@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Product from '../components/Product';
+import ProductListItem from '../components/ProductListItem';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
 import { buyProduct } from '../actions';
@@ -9,7 +9,7 @@ const ProductList = (
 		<section className="row">
 			{map(products.data, product => (
 				<div key={product.id} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-					<Product product={product} ballance={ballance} onClick={onProductClick} />
+					<ProductListItem product={product} ballance={ballance} onClick={onProductClick} />
 				</div>
 			))}
 		</section>

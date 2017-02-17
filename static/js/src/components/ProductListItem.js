@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const Product = (
+const ProductListItem = (
 	({ product, ballance, onClick }) => (
 		<div className="panel panel-default">
 			<div className="panel-heading">
@@ -20,7 +20,7 @@ const Product = (
 	)
 );
 
-Product.propTypes = {
+ProductListItem.propTypes = {
 	product: PropTypes.shape({
 		id: PropTypes.number.isRequired,
 		price: PropTypes.number.isRequired
@@ -29,4 +29,4 @@ Product.propTypes = {
 	onClick: PropTypes.func.isRequired
 };
 
-export default Product;
+export default ProductListItem;
