@@ -5,6 +5,8 @@ import {
 import keyBy from 'lodash/keyBy';
 
 const initialState = {
+	loading: false,
+	data: {}
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,7 +19,7 @@ const reducer = (state = initialState, action) => {
 		case FETCH_PRODUCTS_DONE:
 			return {...state,
 				loading: false,
-				response: keyBy(action.payload.data, 'id')
+				data: keyBy(action.payload.data, 'id')
 			};
 			break;
 		default:
