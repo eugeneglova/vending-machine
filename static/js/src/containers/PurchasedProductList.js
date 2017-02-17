@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import PurchasedProductListItem from '../components/PurchasedProductListItem';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
-import { buyProduct } from '../actions';
 
 const ProductList = (
 	({ products }) => (
@@ -26,7 +25,7 @@ const mapStateToProps = state => ({
 	products: state.purchasedProducts.map(id => state.products.data[id])
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = () => ({
 });
 
 export default connect(

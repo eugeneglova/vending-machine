@@ -22,7 +22,7 @@ const mapStateToProps = state => ({
 	ballance: state.ballance
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = () => ({
 });
 
 export default connect(

@@ -11,19 +11,17 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
-		case FETCH_PRODUCTS:
-			return {...state,
-				loading: true
-			};
-			break;
-		case FETCH_PRODUCTS_DONE:
-			return {...state,
-				loading: false,
-				data: keyBy(action.payload.data, 'id')
-			};
-			break;
-		default:
-			return state;
+	case FETCH_PRODUCTS:
+		return {...state,
+			loading: true
+		};
+	case FETCH_PRODUCTS_DONE:
+		return {...state,
+			loading: false,
+			data: keyBy(action.payload.data, 'id')
+		};
+	default:
+		return state;
 	}
 };
 
