@@ -40,7 +40,7 @@ There was no detailed specifications on how it should work, so I implemented it 
 
 > What were your design/architecture considerations?
 
-I've checked sevral image about vending machines to get features they provide and designed really simple analog adapted for web browser.
+I've checked several image about vending machines to get features they provide and designed really simple analog adapted for web browser.
 
 All of them have different kind of products and all accept money.
 
