@@ -35,7 +35,11 @@ There was no detailed specifications on how it should work, so I implemented it 
 > What were your design/architecture considerations?
 
 I've checked sevral image about vending machines to get features they provide and designed really simple analog adapted for web browser.
+
 All of them have different kind of products and all accept money.
+
 I decided to use just US dollar banknotes 1, 2, 5, 10, 20, 50 and 100 and set prices as int numbers.
+
 Also I've added number of products so the product could be out of stock.
+
 I considered to use num pad keybord to select product like in real vending machine, but decided to use just a button as we use browser and it's easy to choose product by clicking buy button.
