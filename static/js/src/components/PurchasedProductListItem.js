@@ -4,7 +4,7 @@ const PurchasedProductListItem = (
 	({ product }) => (
 		<div className="panel panel-default">
 			<div className="panel-body">
-				<img src={product.image} className="img-rounded" />
+				<img src={product.image} className="img-rounded img-responsive center-block" />
 			</div>
 		</div>
 	)

@@ -7,7 +7,7 @@ const ProductListItem = (
 				Price: <strong>${product.price}</strong> Count: <strong>{product.count}</strong>
 			</div>
 			<div className="panel-body">
-				<img src={product.image} className="img-rounded" />
+				<img src={product.image} className="img-rounded img-responsive center-block" />
 			</div>
 			<div className="panel-footer">
 				{product.count <= 0 ?
