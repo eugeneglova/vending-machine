@@ -10,7 +10,7 @@ const Product = (
 				<img src={`http://lorempixel.com/112/160/technics/?random=${product.id}`} className="img-rounded" />
 			</div>
 			<div className="panel-footer">
-				<button className="btn btn-primary" onClick={() => onClick(product.id)}>Select</button>
+				<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button>
 			</div>
 		</div>
 	)

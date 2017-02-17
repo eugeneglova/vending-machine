@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Product from '../components/Product';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
-import { selectProduct } from '../actions';
+import { buyProduct } from '../actions';
 
 const ProductList = (
 	({ products, onProductClick }) => (
@@ -29,7 +29,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onProductClick: id =>  dispatch({ type: 'SELECT_PRODUCT', payload: id })
+	onProductClick: id =>  dispatch(buyProduct(id))
 });
 
 export default connect(
