@@ -1,17 +1,11 @@
 import React from 'react';
+import BallancePanel from './BallancePanel';
 import BanknotePanel from './BanknotePanel';
 
 const Sidebar = (
 	() => (
 		<section className="sidebar">
-			<div className="panel panel-default">
-				<div className="panel-heading">
-					Ballance
-				</div>
-				<div className="panel-body text-center">
-					$10
-				</div>
-			</div>
+			<BallancePanel />
 			<BanknotePanel banknotes={[1,2,5,10,20,50]} />
 			<div className="panel panel-default">
 				<div className="panel-body text-center">
