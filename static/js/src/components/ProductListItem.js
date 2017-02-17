@@ -11,12 +11,12 @@ const ProductListItem = (
 			</div>
 			<div className="panel-footer">
 				{product.count <= 0 ?
-					<button className="btn btn-danger disabled">Out of stock</button>
+					<span className="text-danger">Out of stock</span>
 					:
 					product.price <= balance ?
 						<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button>
 						:
-						<button className="btn btn-default disabled">Load ${product.price - balance} more</button>
+						<span className="text-warning">Load <strong>${product.price - balance}</strong> more</span>
 				}
 			</div>
 		</div>
