@@ -20,7 +20,8 @@ ProductList.propTypes = {
 	products: PropTypes.shape({
 		loading: PropTypes.bool.isRequired,
 		data: PropTypes.object.isRequired
-	}).isRequired
+	}).isRequired,
+	onProductClick: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
