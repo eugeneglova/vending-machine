@@ -7,7 +7,7 @@ const ProductListItem = (
 				Price: ${product.price}
 			</div>
 			<div className="panel-body">
-				<img src={`http://lorempixel.com/112/160/technics/?random=${product.id}`} className="img-rounded" />
+				<img src={product.image} className="img-rounded" />
 			</div>
 			<div className="panel-footer">
 				{product.price <= ballance ?
@@ -23,7 +23,8 @@ const ProductListItem = (
 ProductListItem.propTypes = {
 	product: PropTypes.shape({
 		id: PropTypes.number.isRequired,
-		price: PropTypes.number.isRequired
+		price: PropTypes.number.isRequired,
+		image: PropTypes.string.isRequired
 	}).isRequired,
 	ballance: PropTypes.number.isRequired,
 	onClick: PropTypes.func.isRequired
