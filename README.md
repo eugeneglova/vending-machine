@@ -2,6 +2,10 @@
 
 A vending machine using React/Redux
 
+# Live demo
+
+https://eugeneglova.github.io/vending-machine/static/
+
 # Run the server
 
 Make sure you have [git](https://git-scm.com/downloads) and [Node](https://nodejs.org) version 6 installed.
