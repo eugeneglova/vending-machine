@@ -23,6 +23,9 @@ module.exports = {
 								'react'
 							]
 						}
+					},
+					{
+						loader: 'eslint-loader'
 					}
 				]
 			},
