@@ -12,7 +12,7 @@ export const fetchProducts = () => dispatch => {
 		type: FETCH_PRODUCTS
 	});	
 
-	axios.get('/api/products.json').then(products => {
+	axios.get('api/products.json').then(products => {
 		dispatch({
 			type: FETCH_PRODUCTS_DONE,
 			payload: products
