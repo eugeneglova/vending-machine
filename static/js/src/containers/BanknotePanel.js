@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import Product from '../components/Product';
 import { connect } from 'react-redux';
 import { loadBanknote } from '../actions';
 
