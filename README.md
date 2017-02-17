@@ -4,7 +4,7 @@ A vending machine using React/Redux
 
 # Live demo
 
-https://eugeneglova.github.io/vending-machine/static/
+[https://eugeneglova.github.io/vending-machine/static/](https://eugeneglova.github.io/vending-machine/static/)
 
 # Run the server
 
