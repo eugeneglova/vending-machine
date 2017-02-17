@@ -4,16 +4,19 @@ const ProductListItem = (
 	({ product, balance, onClick }) => (
 		<div className="panel panel-default">
 			<div className="panel-heading">
-				Price: ${product.price}
+				Price: <strong>${product.price}</strong> Count: <strong>{product.count}</strong>
 			</div>
 			<div className="panel-body">
 				<img src={product.image} className="img-rounded" />
 			</div>
 			<div className="panel-footer">
-				{product.price <= balance ?
-					<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button>
+				{product.count <= 0 ?
+					<button className="btn btn-danger disabled">Out of stock</button>
 					:
-					<button className="btn btn-default disabled">Load ${product.price - balance} more</button>
+					product.price <= balance ?
+						<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button>
+						:
+						<button className="btn btn-default disabled">Load ${product.price - balance} more</button>
 				}
 			</div>
 		</div>
