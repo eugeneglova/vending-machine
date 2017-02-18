@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
 		return {...state,
 			data: {...state.data,
 				[action.payload]: {...state.data[action.payload],
-					loading: true,
+					loading: false,
 					count: state.data[action.payload].count - 1
 				}
 			}

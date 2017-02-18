@@ -10,13 +10,14 @@ const ProductListItem = (
 				<img src={product.image} className="img-rounded img-responsive center-block" />
 			</div>
 			<div className="panel-footer">
-				{product.count <= 0 ?
-					<label className="btn-sm text-danger">Out of stock</label>
-					:
+				{
+					product.count <= 0 ?
+					<label className="btn-sm text-danger">Out of stock</label> :
+					product.loading ?
+					<button className="btn btn-primary">Buying ...</button> :
 					product.price <= balance.value ?
-						<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button>
-						:
-						<label className="btn-sm text-warning">Load <strong>${product.price - balance.value}</strong> more</label>
+					<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button> :
+					<label className="btn-sm text-warning">Load <strong>${product.price - balance.value}</strong> more</label>
 				}
 			</div>
 		</div>
