@@ -15,10 +15,13 @@ export const fetchProducts = () => dispatch => {
 	});	
 
 	axios.get('api/products.json').then(products => {
-		dispatch({
-			type: FETCH_PRODUCTS_DONE,
-			payload: products
-		});
+		// Add some timeout to see loading
+		setTimeout(() => {
+			dispatch({
+				type: FETCH_PRODUCTS_DONE,
+				payload: products
+			});
+		}, 1000);
 	});
 };
 
@@ -32,10 +35,13 @@ export const incrementBalance = amount => dispatch => {
 	axios.post('api/balance', {
 		amount
 	}).catch(() => {
-		dispatch({
-			type: INCREMENT_BALANCE_DONE,
-			payload: amount
-		});		
+		// Add some timeout to see loading
+		setTimeout(() => {
+			dispatch({
+				type: INCREMENT_BALANCE_DONE,
+				payload: amount
+			});		
+		}, 1000);
 	});
 };
 
@@ -54,12 +60,15 @@ export const buyProduct = id => (dispatch, getState) => {
 
 	// emulate rest API to buy product and catch error as API isn't implemented
 	axios.put(`api/products/${id}`).catch(() => {
-		// actually we should do this on backend
-		dispatch(decrementBalance(getState().products.data[id].price));
+		// Add some timeout to see loading
+		setTimeout(() => {
+			// actually we should do this on backend
+			dispatch(decrementBalance(getState().products.data[id].price));
 
-		dispatch({
-			type: BUY_PRODUCT_DONE,
-			payload: id
-		});
+			dispatch({
+				type: BUY_PRODUCT_DONE,
+				payload: id
+			});
+		}, 1000);
 	});
 };
