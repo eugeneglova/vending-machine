@@ -8,7 +8,11 @@ const BalancePanel = (
 				Balance
 			</div>
 			<div className="panel-body text-center">
-				${balance.value}
+				{
+					balance.loading ?
+					'Loading balance...' :
+					`$${balance.value}`
+				}
 			</div>
 		</section>
 	)
