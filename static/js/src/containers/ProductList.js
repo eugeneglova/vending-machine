@@ -21,7 +21,7 @@ ProductList.propTypes = {
 		loading: PropTypes.bool.isRequired,
 		data: PropTypes.object.isRequired
 	}).isRequired,
-	balance: PropTypes.number.isRequired,
+	balance: PropTypes.object.isRequired,
 	onProductClick: PropTypes.func.isRequired
 };
 

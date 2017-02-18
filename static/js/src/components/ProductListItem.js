@@ -13,10 +13,10 @@ const ProductListItem = (
 				{product.count <= 0 ?
 					<label className="btn-sm text-danger">Out of stock</label>
 					:
-					product.price <= balance ?
+					product.price <= balance.value ?
 						<button className="btn btn-primary" onClick={() => onClick(product.id)}>Buy</button>
 						:
-						<label className="btn-sm text-warning">Load <strong>${product.price - balance}</strong> more</label>
+						<label className="btn-sm text-warning">Load <strong>${product.price - balance.value}</strong> more</label>
 				}
 			</div>
 		</div>
@@ -29,7 +29,10 @@ ProductListItem.propTypes = {
 		price: PropTypes.number.isRequired,
 		image: PropTypes.string.isRequired
 	}).isRequired,
-	balance: PropTypes.number.isRequired,
+	balance: PropTypes.shape({
+		loading: PropTypes.bool.isRequired,
+		value: PropTypes.number.isRequired
+	}),
 	onClick: PropTypes.func.isRequired
 };
 

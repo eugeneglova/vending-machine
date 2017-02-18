@@ -2,6 +2,7 @@ import {
 	FETCH_PRODUCTS,
 	FETCH_PRODUCTS_DONE,
 	INCREMENT_BALANCE,
+	INCREMENT_BALANCE_DONE,
 	DECREMENT_BALANCE,
 	BUY_PRODUCT,
 	BUY_PRODUCT_DONE
@@ -25,21 +26,31 @@ export const incrementBalance = amount => dispatch => {
 	dispatch({
 		type: INCREMENT_BALANCE,
 		payload: amount
-	});	
+	});
+
+	// emulate rest API to increment amount of money in machine and catch error as API isn't implemented
+	axios.post('api/balance', {
+		amount
+	}).catch(() => {
+		dispatch({
+			type: INCREMENT_BALANCE_DONE,
+			payload: amount
+		});		
+	});
 };
 
 export const decrementBalance = amount => dispatch => {
 	dispatch({
 		type: DECREMENT_BALANCE,
 		payload: amount
-	});	
+	});
 };
 
 export const buyProduct = id => (dispatch, getState) => {
 	dispatch({
 		type: BUY_PRODUCT,
 		payload: id
-	});	
+	});
 
 	// emulate rest API to buy product and catch error as API isn't implemented
 	axios.put(`api/products/${id}`).catch(() => {
@@ -49,6 +60,6 @@ export const buyProduct = id => (dispatch, getState) => {
 		dispatch({
 			type: BUY_PRODUCT_DONE,
 			payload: id
-		});	
+		});
 	});
 };

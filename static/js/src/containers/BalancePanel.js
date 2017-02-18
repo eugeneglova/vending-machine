@@ -8,14 +8,17 @@ const BalancePanel = (
 				Balance
 			</div>
 			<div className="panel-body text-center">
-				${balance}
+				${balance.value}
 			</div>
 		</section>
 	)
 );
 
 BalancePanel.propTypes = {
-	balance: PropTypes.number.isRequired
+	balance: PropTypes.shape({
+		loading: PropTypes.bool.isRequired,
+		value: PropTypes.number.isRequired
+	})
 };
 
 const mapStateToProps = state => ({
