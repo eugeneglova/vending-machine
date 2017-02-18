@@ -1,7 +1,8 @@
 import {
 	FETCH_PRODUCTS,
 	FETCH_PRODUCTS_DONE,
-	BUY_PRODUCT
+	BUY_PRODUCT,
+	BUY_PRODUCT_DONE
 } from '../constants/ActionTypes';
 import keyBy from 'lodash/keyBy';
 
@@ -19,12 +20,25 @@ const reducer = (state = initialState, action) => {
 	case FETCH_PRODUCTS_DONE:
 		return {...state,
 			loading: false,
-			data: keyBy(action.payload.data, 'id')
+			data: keyBy(action.payload.data.map(product => (
+				{...product,
+					loading: false
+				}
+			)), 'id')
 		};
 	case BUY_PRODUCT:
 		return {...state,
 			data: {...state.data,
 				[action.payload]: {...state.data[action.payload],
+					loading: true
+				}
+			}
+		};
+	case BUY_PRODUCT_DONE:
+		return {...state,
+			data: {...state.data,
+				[action.payload]: {...state.data[action.payload],
+					loading: true,
 					count: state.data[action.payload].count - 1
 				}
 			}
